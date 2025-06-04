@@ -47,13 +47,15 @@ function App() {
       const base64Image = canvas.toDataURL("image/jpeg");
 
       // Send to backend
-      fetch(BACKEND_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ image: base64Image }),
-      })
+// Send to backend
+fetch(`${BACKEND_URL}/predict`, {  // ✅ Added /predict
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ image: base64Image }),
+})
+
         .then((res) => res.json())
         .then((data) => {
           if (data.prediction) {
