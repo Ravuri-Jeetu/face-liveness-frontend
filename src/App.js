@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 
-const BACKEND_URL = "https://face-liveness-backend.onrender.com/predict";
+const BACKEND_URL = "https://backend-0wlp.onrender.com";
 
 function App() {
   const videoRef = useRef(null);
